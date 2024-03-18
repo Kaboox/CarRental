@@ -168,9 +168,21 @@ main {
 
 .gallery {
 	display: flex;
+	flex-direction: column;
 	justify-content: center;
 	align-items: center;
 	text-align: center;
+}
+
+.gallery-box {
+	width: 50%;
+	border: 3px solid black;
+	border-radius: 10px;
+}
+
+.gallery-img {
+	width: 100%;
+	border-radius: 10px;
 }
 
 @media (min-width: 768px) {
