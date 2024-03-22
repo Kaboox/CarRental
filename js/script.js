@@ -2,7 +2,7 @@ const galleryImg = document.querySelector(".gallery-img");
 const leftArrow = document.querySelector(".left");
 const rightArrow = document.querySelector(".right");
 
-let imgCounter = 1;
+let imgCounter = 0;
 const img1 = {
     "path": "../img/furymale/m2top.jpg",
     "name": ""
@@ -33,13 +33,17 @@ const imgArray = [
 
 const moveLeft = (event) => {
     imgCounter--;
-    imgCounter %= 5;
+    if (imgCounter < 0) {
+        imgCounter = imgArray.length - 1;
+    }
     galleryImg.setAttribute('src', imgArray[imgCounter].path)
 }
 
 const moveRight = (event) => {
     imgCounter++;
-    imgCounter %= 5;
+    if (imgCounter === imgArray.length) {
+        imgCounter = 0;
+    }
     galleryImg.setAttribute('src', imgArray[imgCounter].path)
 }
 
