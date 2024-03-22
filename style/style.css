@@ -175,9 +175,29 @@ main {
 }
 
 .gallery-box {
-	width: 50%;
+	position: relative;
+	width: 80%;
 	border: 3px solid black;
 	border-radius: 10px;
+}
+
+.gallery-box .left {
+	position: absolute;
+	top: 50%;
+	left: 8%;
+	transform: translate(-50%, -50%);
+	padding: .3em;
+	cursor: pointer;
+}
+
+
+.gallery-box .right {
+	position: absolute;
+	top: 50%;
+	right: 8%;
+	transform: translate(50%, -50%);
+	padding: .3em;
+	cursor: pointer;
 }
 
 .gallery-img {
@@ -212,5 +232,11 @@ main {
 	.top-cars {
 		flex-direction: row;
 		flex-wrap: wrap;
+	}
+
+	.gallery-box {
+		width: 50%;
+		border: 3px solid black;
+		border-radius: 10px;
 	}
 }
