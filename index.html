@@ -122,8 +122,34 @@
 
             </div>
         </section>
-        <!-- <section>skrypt do liczenia kosztow</section>
-         <section>formularz kontaktowy</section> -->
+        <section class="price">
+            <h1 class="section-title">Cennik</h1>
+            <form class="price-form">
+                <div class="car-container">
+                    <label for="car">Wybierz samochód:</label>
+                <select id="car">
+                    <option value="1">Mercedes A35 AMG</option>
+                    <option value="2">BMW M4 Competition</option>
+                    <option value="3">BMW M2 Competition</option>
+                </select>
+                </div>
+                <div class="days-container">
+                    <label for="days">Liczba dni: </label>
+                <input type="number" max="30" id="days">
+                </div>
+                <div class="km-container">
+                    <label for="km">Liczba kilometrów: </label>
+                <select id="km">
+                    <option value="1">250</option>
+                    <option value="2">500</option>
+                    <option value="3">750</option>
+                </select>
+                </div>
+                <button class="price-btn">Zatwierdź</button>
+            </form>
+        </section>
+        
+         <section>formularz kontaktowy</section>
     </main>
     <footer></footer>
 
