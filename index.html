@@ -91,22 +91,22 @@
             <div class="top-cars">
                 <div class="top-1">
                     <p>BMW M2 Competition</p>
-                    <img class="top-pick-img" src="img/furymale/m2top.jpg" alt="Białe Bmw M2 Competition">
+                    <img class="top-pick-img" src="img/furymale/m2front.jpg" alt="Białe Bmw M2 Competition">
                 </div>
                 <div class="top-2">
                     <p>BMW M4 Competition</p>
-                    <img class="top-pick-img" src="img/furymale/m4top.jpg" alt="Zielone Audi RS3">
+                    <img class="top-pick-img" src="img/furymale/m4front.jpg" alt="Zielone Audi RS3">
                 </div>
                 <div class="top-3">
                     <p>Mercedes A35 AMG</p>
-                    <img class="top-pick-img" src="img/furymale/a35top.jpg" alt="Żółty Mercedes A35 AMG">
+                    <img class="top-pick-img" src="img/furymale/a35front.jpg" alt="Żółty Mercedes A35 AMG">
                 </div>
             </div>
         </section>
         <section class="gallery">
             <h1 class="section-title">Galeria zdjęć</h1>
             <div class="gallery-box">
-                <img src="img/furymale/a35top.jpg" class="gallery-img" alt="Aktualnie wybrane zdjęcie - dodamy dynamicznie z JS">
+                <img src="" class="gallery-img" alt="">
                 <div class="left">
                     <svg xmlns="http://www.w3.org/2000/svg" class="icon-left icon-tabler icon-tabler-circle-arrow-left-filled" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="#2c3e50" fill="none" stroke-linecap="round" stroke-linejoin="round">
                         <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
@@ -119,8 +119,8 @@
                         <path d="M12 2l.324 .005a10 10 0 1 1 -.648 0l.324 -.005zm.613 5.21a1 1 0 0 0 -1.32 1.497l2.291 2.293h-5.584l-.117 .007a1 1 0 0 0 .117 1.993h5.584l-2.291 2.293l-.083 .094a1 1 0 0 0 1.497 1.32l4 -4l.073 -.082l.064 -.089l.062 -.113l.044 -.11l.03 -.112l.017 -.126l.003 -.075l-.007 -.118l-.029 -.148l-.035 -.105l-.054 -.113l-.071 -.111a1.008 1.008 0 0 0 -.097 -.112l-4 -4z" stroke-width="0" fill="currentColor" />
                       </svg>
                   </div>
-
-            </div>
+                </div>
+                <p class="car-name">Mercedes A35 AMG</p>
         </section>
         <section class="price">
             <h1 class="section-title">Cennik</h1>
@@ -136,7 +136,11 @@
                     </div>
                     <div class="days-container">
                         <label for="days">Liczba dni: </label>
-                    <input type="number" max="30" id="days">
+                    <select id="days">
+                        <option value="1">1 dzień</option>
+                        <option value="2">7 dni</option>
+                        <option value="3">30 dni</option>
+                    </select>
                     </div>
                     <div class="km-container">
                         <label for="km">Limit kilometrów: </label>
@@ -148,7 +152,7 @@
                     </div>
                 </div>
                 <button class="price-btn">Zatwierdź</button>
-                <p class="payment">Przewidywane koszty: <span class="payment-amount"></span>zł</p>
+                <p class="payment">Przewidywane koszty: <span class="payment-amount">-</span> zł</p>
             </form>
         </section>
         
