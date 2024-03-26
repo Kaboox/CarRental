@@ -1,6 +1,7 @@
 const galleryImg = document.querySelector(".gallery-img");
 const leftArrow = document.querySelector(".left");
 const rightArrow = document.querySelector(".right");
+const paymentAmount = document.querySelector('.payment-amount');
 
 let imgCounter = 0;
 const img1 = {
