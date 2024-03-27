@@ -11,6 +11,7 @@ const priceBtn = document.querySelector('.price-btn');
 const selectedCar = document.getElementById("car");
 const daysAmount = document.getElementById("days");
 const selectedKmAmount = document.getElementById("km");
+const allMenuLinks = document.querySelectorAll(".menu-link")
 
 let imgCounter = 0;
 const img1 = {

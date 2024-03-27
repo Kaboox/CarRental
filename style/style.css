@@ -36,7 +36,7 @@ nav {
 	padding: 2em;
 	min-height: 80px;
 	z-index: 100;
-	color: white;
+	/* color: white; */
 	background-color: rgba(0, 0, 0, 0.3);
 }
 
@@ -47,11 +47,17 @@ nav .desktop {
 nav .desktop ul {
 	display: flex;
 	justify-content: space-between;
-	cursor: pointer;
 }
 
-nav .desktop ul li {
+
+nav .desktop ul li a {
+	display: block;
+	width: 100%;
 	padding: 0 2em;
+}
+
+.nav-right .desktop ul li a:hover {
+	color: rgb(200,200,200); /* Change this to your desired hover color */
 }
 
 nav .mobile .burger {
