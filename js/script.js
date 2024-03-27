@@ -11,6 +11,10 @@ const priceBtn = document.querySelector('.price-btn');
 const selectedCar = document.getElementById("car");
 const daysAmount = document.getElementById("days");
 const selectedKmAmount = document.getElementById("km");
+const nameInput = document.querySelector('.contact-name');
+const emailInput = document.querySelector('.contact-email');
+const textArea = document.querySelector('.contact-text');
+const sendFormBtn = document.querySelector('.contact-btn');
 const allMenuLinks = document.querySelectorAll(".menu-link");
 const dateText = document.querySelector('.date');
 const timeText = document.querySelector('.time');
@@ -103,9 +107,14 @@ allMenuLinks.forEach(item => {
     })
 })
 
+const sendForm = (event) => {
+    event.preventDefault();
+}
+
 leftArrow.addEventListener('click', moveLeft);
 rightArrow.addEventListener('click', moveRight);
 priceBtn.addEventListener('click', countPayment);
+sendFormBtn.addEventListener('click', sendForm);
 document.addEventListener('DOMContentLoaded', () => {
     galleryImg.setAttribute('src', imgArray[imgCounter].path);
     carName.textContent = imgArray[imgCounter].name;

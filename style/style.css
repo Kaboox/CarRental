@@ -347,11 +347,12 @@ main {
 	width: 100%;
 }
 
-.contact input, .contact textarea {
+.contact-name, .contact-email,  .contact-text {
 	display: flex;
 	width: 100%;
 	text-align: center;
 	padding: 0.5em;
+	border: 2px solid black;
 	border-radius: 6px;
 	font-weight: bold;
 	resize: vertical;
@@ -372,6 +373,10 @@ main {
 
 .contact button:hover {
 	background-color: rgb(90, 114, 90);
+}
+
+.input-error {
+	border: 3px solid tomato;
 }
 
 .footer-hr {
