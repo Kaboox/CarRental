@@ -40,7 +40,7 @@
             </div>
         </div>
     </nav>
-    <div class="mobile-menu menu-active">
+    <div class="mobile-menu">
         <div class="close-menu">
             <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-square-x" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="#fff" fill="none" stroke-linecap="round" stroke-linejoin="round">
                 <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
@@ -171,9 +171,34 @@
             </form>
         </section>
         
-         <section id="contact">formularz kontaktowy</section>
+         <section id="contact" class="contact">
+            <h1 class="section-title">Kontakt</h1>
+            <form action="">
+                <div class="inputs">
+                    <div class="name">
+                        <label for="">Imię</label>
+                    <input type="text">
+                    </div>
+    
+                    <div class="email">
+                        <label for="email">Email</label>
+                    <input type="email">
+                    </div>
+    
+                </div>
+                <div class="message">
+                    <label for="message">Wiadomość</label>
+                <textarea name="" id="" cols="30" rows="10" ></textarea>
+                </div>
+                <button>Wyślij</button>
+                </form>
+                
+         </section>
     </main>
-    <footer></footer>
+    <hr>
+    <footer>
+        <p>CarRental &copy;</p>
+    </footer>
 
 
     <script src="js/script.js"></script>
