@@ -56,8 +56,19 @@ const moveRight = (event) => {
 }
 
 const countPayment = (event) => {
+    let amount = 0;
     event.preventDefault();
-
+    if(selectedCar.value == 1) {
+        amount = 600;
+        
+    } else if(selectedCar.value == 2) {
+        amount = 700;
+    } else {
+        amount = 400;
+    }
+    amount += (daysAmount.value * 400);
+    amount += (selectedKmAmount.value * 150);
+    paymentAmount.textContent = amount.toString();
 }
 
 leftArrow.addEventListener('click', moveLeft);
