@@ -15,15 +15,15 @@
 <body>
     <nav>
         <div class="nav-left">
-            <p class="title">CarRental</p>
+            <p class="title"><a href="#">CarRental</a></p>
         </div>
         <div class="nav-right">
             <div class="desktop">
                 <ul>
-                    <li>O nas</li>
-                    <li>Galeria</li>
-                    <li>Cennik</li>
-                    <li>Kontakt</li>
+                    <li><a href="#aboutus">O nas</a></li>
+                    <li><a href="#gallery">Galeria</a></li>
+                    <li><a href="#price">Cennik</a></li>
+                    <li><a href="#contact">Kontakt</a></li>
                 </ul>
             </div>
             <div class="mobile">
@@ -40,6 +40,21 @@
             </div>
         </div>
     </nav>
+    <div class="mobile-menu menu-active">
+        <div class="close-menu">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-square-x" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="#fff" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                <path d="M3 5a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v14a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-14z" />
+                <path d="M9 9l6 6m0 -6l-6 6" />
+              </svg>
+        </div>
+        <ul>
+            <li><a href="#aboutus">O nas</a></li>
+            <li><a href="#gallery">Galeria</a></li>
+            <li><a href="#price">Cennik</a></li>
+            <li><a href="#contact">Kontakt</a></li>
+        </ul>
+    </div>
     <header>
         <div class="wrapper">
 
@@ -103,7 +118,7 @@
                 </div>
             </div>
         </section>
-        <section class="gallery">
+        <section class="gallery" id="gallery">
             <h1 class="section-title">Galeria zdjęć</h1>
             <div class="gallery-box">
                 <img src="" class="gallery-img" alt="">
@@ -122,7 +137,7 @@
                 </div>
                 <p class="car-name">Mercedes A35 AMG</p>
         </section>
-        <section class="price">
+        <section class="price" id="price">
             <h1 class="section-title">Cennik</h1>
             <form class="price-form">
                 <div class="inputs">
@@ -156,7 +171,7 @@
             </form>
         </section>
         
-         <section>formularz kontaktowy</section>
+         <section id="contact">formularz kontaktowy</section>
     </main>
     <footer></footer>
 

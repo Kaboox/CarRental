@@ -6,10 +6,16 @@
 
 html {
 	font-family: sans-serif;
+	scroll-behavior: smooth;
 }
 
 ul {
 	list-style-type: none;
+}
+
+a {
+	text-decoration: none;
+	color: white;
 }
 
 .title {
@@ -31,7 +37,7 @@ nav {
 	min-height: 80px;
 	z-index: 100;
 	color: white;
-	background-color: rgba(0,0,0,.3);
+	background-color: rgba(0, 0, 0, 0.3);
 }
 
 nav .desktop {
@@ -50,6 +56,40 @@ nav .desktop ul li {
 
 nav .mobile .burger {
 	cursor: pointer;
+}
+
+.mobile-menu {
+	position: fixed;
+	top: 0;
+	left: 0;
+	justify-content: center;
+	min-height: 100vh;
+	width: 100vw;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	background-color: rgba(0,0,0,.9);
+	transform: translateX(110%);
+	transition: transform 0.4s;
+	z-index: 100;
+}
+.menu-active {
+	display: flex;
+	transform: translateX(0%);
+}
+
+.mobile-menu .close-menu {
+	position: fixed;
+	top: 0;
+	right: 0;
+	padding: 1em;
+	cursor: pointer;
+}
+
+.mobile-menu li {
+	font-size: 2rem;
+	padding: 1em;
 }
 
 header {
@@ -93,9 +133,9 @@ header button {
 }
 
 header button:hover {
-    background: white;
-    color: black;
-    border: 3px solid black;
+	background: white;
+	color: black;
+	border: 3px solid black;
 }
 
 header .hero-bg {
@@ -199,17 +239,16 @@ main {
 	top: 50%;
 	left: 8%;
 	transform: translate(-50%, -50%);
-	padding: .3em;
+	padding: 0.3em;
 	cursor: pointer;
 }
-
 
 .gallery-box .right {
 	position: absolute;
 	top: 50%;
 	right: 8%;
 	transform: translate(50%, -50%);
-	padding: .3em;
+	padding: 0.3em;
 	cursor: pointer;
 }
 
@@ -242,7 +281,9 @@ main {
 	width: 100%;
 }
 
-.car-container, .days-container, .km-container {
+.car-container,
+.days-container,
+.km-container {
 	display: flex;
 	flex-direction: column;
 	align-items: start;
@@ -250,13 +291,12 @@ main {
 	width: 100%;
 }
 
-
-
-.price select, .price input {
+.price select,
+.price input {
 	display: flex;
 	width: 100%;
 	text-align: center;
-	padding: .5em;
+	padding: 0.5em;
 	border-radius: 6px;
 	font-weight: bold;
 }
@@ -269,19 +309,26 @@ main {
 	font-weight: bold;
 	background-color: rgb(131, 156, 233);
 	cursor: pointer;
+	transition: background-color 0.3s;
 }
 
-
+.price-btn:hover {
+	background-color: rgb(102, 130, 213);
+}
 
 @media (min-width: 768px) {
+
+	.mobile-menu {
+		display: none;
+	}
 	.aboutus-text {
 		flex-direction: row;
 		justify-content: space-evenly;
 	}
-    .top-cars {
-        flex-direction: row;
-        flex-wrap: wrap;
-    }
+	.top-cars {
+		flex-direction: row;
+		flex-wrap: wrap;
+	}
 	.top-1,
 	.top-2,
 	.top-3 {
@@ -297,13 +344,12 @@ main {
 		font-size: 1.4rem;
 	}
 
-	
-
-	.price select, .price input {
+	.price select,
+	.price input {
 		display: flex;
 		width: 100%;
 		text-align: center;
-		padding: .8em;
+		padding: 0.8em;
 		border-radius: 6px;
 		font-weight: bold;
 		font-size: 1rem;
@@ -313,8 +359,6 @@ main {
 		padding: 1em;
 		font-size: 1.2rem;
 	}
-	
-	
 }
 
 @media (min-width: 992px) {

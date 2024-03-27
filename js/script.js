@@ -1,3 +1,7 @@
+const burgerBtn = document.querySelector('.burger');
+const closeMenuBtn = document.querySelector('.close-menu');
+const mobileMenu = document.querySelector('.mobile-menu');
+const body = document.querySelector('body');
 const galleryImg = document.querySelector(".gallery-img");
 const carName = document.querySelector(".car-name");
 const leftArrow = document.querySelector(".left");
@@ -70,6 +74,23 @@ const countPayment = (event) => {
     amount += (selectedKmAmount.value * 150);
     paymentAmount.textContent = amount.toString();
 }
+
+burgerBtn.addEventListener('click', () => {
+    mobileMenu.classList.add('menu-active')
+    body.style.overflowY = 'hidden';
+})
+
+closeMenuBtn.addEventListener('click', () => {
+    mobileMenu.classList.remove('menu-active')
+    body.style.overflowY = 'auto'
+})
+
+allMenuLinks.forEach(item => {
+    item.addEventListener('click', () => {
+        mobileMenu.classList.remove('menu-active')
+        body.style.overflowY = 'auto'
+    })
+})
 
 leftArrow.addEventListener('click', moveLeft);
 rightArrow.addEventListener('click', moveRight);
