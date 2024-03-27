@@ -11,7 +11,9 @@ const priceBtn = document.querySelector('.price-btn');
 const selectedCar = document.getElementById("car");
 const daysAmount = document.getElementById("days");
 const selectedKmAmount = document.getElementById("km");
-const allMenuLinks = document.querySelectorAll(".menu-link")
+const allMenuLinks = document.querySelectorAll(".menu-link");
+const dateText = document.querySelector('.date');
+const timeText = document.querySelector('.time');
 
 let imgCounter = 0;
 const img1 = {
@@ -76,6 +78,14 @@ const countPayment = (event) => {
     paymentAmount.textContent = amount.toString();
 }
 
+
+const updateDateTime = () => {
+    const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric', hour: 'numeric', minute: 'numeric', second: 'numeric' };
+    const locale = 'pl-PL';
+    const dateTimeString = new Date().toLocaleString(locale, options);
+    timeText.textContent = dateTimeString;
+}
+
 burgerBtn.addEventListener('click', () => {
     mobileMenu.classList.add('menu-active')
     body.style.overflowY = 'hidden';
@@ -100,3 +110,5 @@ document.addEventListener('DOMContentLoaded', () => {
     galleryImg.setAttribute('src', imgArray[imgCounter].path);
     carName.textContent = imgArray[imgCounter].name;
 })
+
+setInterval(updateDateTime, 1000);
