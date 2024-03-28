@@ -19,6 +19,8 @@ const allMenuLinks = document.querySelectorAll(".menu-link");
 const dateText = document.querySelector('.date');
 const timeText = document.querySelector('.time');
 
+const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|.(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+
 let imgCounter = 0;
 const img1 = {
     "path": "../img/furymale/m2front.jpg",
@@ -109,6 +111,25 @@ allMenuLinks.forEach(item => {
 
 const sendForm = (event) => {
     event.preventDefault();
+    if (nameInput.value.length == 0) {
+        nameInput.classList.add('input-error');
+    } else {
+        nameInput.classList.remove('input-error');
+    }
+    
+    if (emailInput.value.length == 0) {
+        emailInput.classList.add('input-error');
+    } else if (!emailInput.value.toLowerCase().match(re)) {
+        emailInput.classList.add('input-error');
+    } else {
+        emailInput.classList.remove('input-error');
+    }
+
+    if (textArea.value.length == 0) {
+        textArea.classList.add('input-error');
+    } else {
+        textArea.classList.remove('input-error');
+    }
 }
 
 leftArrow.addEventListener('click', moveLeft);
