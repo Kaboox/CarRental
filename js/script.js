@@ -18,6 +18,7 @@ const sendFormBtn = document.querySelector('.contact-btn');
 const allMenuLinks = document.querySelectorAll(".menu-link");
 const dateText = document.querySelector('.date');
 const timeText = document.querySelector('.time');
+const formCount = document.querySelector('.form-count');
 
 const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|.(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
 
@@ -84,6 +85,15 @@ const countPayment = (event) => {
     paymentAmount.textContent = amount.toString();
 }
 
+const fetchFormCount = () => {
+    fetch('count_forms.php')
+        .then(response => response.text())
+        .then(data => {
+            formCount.textContent = data.trim();
+        })
+        .catch(error => console.error('Error fetching form count:', error));
+}
+
 
 const updateDateTime = () => {
     const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric', hour: 'numeric', minute: 'numeric', second: 'numeric' };
@@ -108,6 +118,12 @@ allMenuLinks.forEach(item => {
         body.style.overflowY = 'auto'
     })
 })
+
+const clearForm = () => {
+    nameInput.value = '';
+    emailInput.value = '';
+    textArea.value = '';
+}
 
 const sendForm = (event) => {
     event.preventDefault();
@@ -157,6 +173,8 @@ const sendForm = (event) => {
         })
         .then(data => {
             console.log(data); // Log success message
+            clearForm();
+            fetchFormCount();
         })
         .catch(error => {
             console.error('Error:', error); // Log error message
@@ -171,6 +189,7 @@ sendFormBtn.addEventListener('click', sendForm);
 document.addEventListener('DOMContentLoaded', () => {
     galleryImg.setAttribute('src', imgArray[imgCounter].path);
     carName.textContent = imgArray[imgCounter].name;
+    fetchFormCount();
 })
 
 setInterval(updateDateTime, 1000);

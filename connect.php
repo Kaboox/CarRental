@@ -4,6 +4,8 @@
     $contactEmail = $_POST['contactEmail'];
     $contactMsg = $_POST['contactMsg'];
 
+    
+
 
     $conn = new mysqli('localhost', 'root', '', 'projekttest');
     if($conn->connect_error) {
@@ -14,6 +16,7 @@
         $stmt->execute();
         echo "Form sent!";
         $stmt->close();
+
         $conn->close();
     }
 ?>
