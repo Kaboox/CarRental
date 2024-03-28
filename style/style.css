@@ -104,7 +104,7 @@ header {
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-	background-image: url(/img/hero-small.jpg);
+	background-image: url(../img/hero-small.jpg);
 	background-size: cover;
 	background-position: center;
 	min-height: 50vh;

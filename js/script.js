@@ -23,23 +23,23 @@ const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|.(".+"))@((\[[0-
 
 let imgCounter = 0;
 const img1 = {
-    "path": "../img/furymale/m2front.jpg",
+    "path": "img/furymale/m2front.jpg",
     "name": "BMW M2 Competition"
 }
 const img2 = {
-    "path": "../img/furymale/m2back.jpg",
+    "path": "img/furymale/m2back.jpg",
     "name": "BMW M2 Competition"
 }
 const img3 = {
-    "path": "../img/furymale/m4front.jpg",
+    "path": "img/furymale/m4front.jpg",
     "name": "BMW M4 Competition"
 }
 const img4 = {
-    "path": "../img/furymale/m4back.jpg",
+    "path": "img/furymale/m4back.jpg",
     "name": "BMW M4 Competition"
 }
 const img5 = {
-    "path": "../img/furymale/a35front.jpg",
+    "path": "img/furymale/a35front.jpg",
     "name": "Mercedes A35 AMG"
 }
 const imgArray = [
@@ -111,24 +111,56 @@ allMenuLinks.forEach(item => {
 
 const sendForm = (event) => {
     event.preventDefault();
-    if (nameInput.value.length == 0) {
+    let isValid = true;
+
+    // Validation for name input
+    if (nameInput.value.trim() === "") {
         nameInput.classList.add('input-error');
+        isValid = false;
     } else {
         nameInput.classList.remove('input-error');
     }
-    
-    if (emailInput.value.length == 0) {
+
+    // Validation for email input
+    if (emailInput.value.trim() === "" || !emailInput.value.toLowerCase().match(re)) {
         emailInput.classList.add('input-error');
-    } else if (!emailInput.value.toLowerCase().match(re)) {
-        emailInput.classList.add('input-error');
+        isValid = false;
     } else {
         emailInput.classList.remove('input-error');
     }
 
-    if (textArea.value.length == 0) {
+    // Validation for message input
+    if (textArea.value.trim() === "") {
         textArea.classList.add('input-error');
+        isValid = false;
     } else {
         textArea.classList.remove('input-error');
+    }
+
+    // If all inputs are valid, send the form
+    if (isValid) {
+        const formData = new FormData();
+        formData.append('contactName', nameInput.value.trim());
+        formData.append('contactEmail', emailInput.value.trim());
+        formData.append('contactMsg', textArea.value.trim());
+
+        // Send form data to PHP script
+        fetch('connect.php', {
+            method: 'POST',
+            body: formData
+        })
+        .then(response => {
+            if (response.ok) {
+                return response.text();
+            }
+            throw new Error('Network response was not ok.');
+        })
+        .then(data => {
+            console.log(data); // Log success message
+        })
+        .catch(error => {
+            console.error('Error:', error); // Log error message
+        });
     }
 }
 

@@ -29,7 +29,7 @@
             <div class="mobile">
                 <div class="burger">
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                        stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
                         class="icon icon-tabler icons-tabler-outline icon-tabler-menu-2">
                         <path stroke="none" d="M0 0h24v24H0z" fill="none" />
                         <path d="M4 6l16 0" />
@@ -56,7 +56,7 @@
         </ul>
     </div>
     <header>
-        <div class="wrapper">
+        
 
             <div class="hero-text">
                 <h3 class="title">CarRental</h3>
@@ -65,7 +65,7 @@
             </div>
             <a href="#price"><button>Oferta</button></a>
 
-        </div>
+        
         <div class="hero-bg"></div>
         <div class="home-scroll scrollspy" id="home"></div>
     </header>
@@ -173,22 +173,22 @@
         
          <section id="contact" class="contact">
             <h1 class="section-title">Kontakt</h1>
-            <form action="">
+            <form action="connect.php" method="post">
                 <div class="inputs">
                     <div class="name">
                         <label for="">Imię</label>
-                    <input type="text " class="contact-name">
+                    <input type="text " class="contact-name" name="contactName">
                     </div>
     
                     <div class="email">
                         <label for="email">Email</label>
-                    <input type="email" class="contact-email">
+                    <input type="email" class="contact-email" name="contactEmail">
                     </div>
     
                 </div>
                 <div class="message">
                     <label for="message">Wiadomość</label>
-                <textarea name="" id="" cols="30" rows="10" class="contact-text" ></textarea>
+                <textarea name="" id="" cols="30" rows="10" class="contact-text" name="contactMsg"></textarea>
                 </div>
                 <button class="contact-btn">Wyślij</button>
                 </form>
